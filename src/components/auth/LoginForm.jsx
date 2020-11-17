@@ -31,7 +31,7 @@ function LoginForm({onSubmit}) {
 
                     <div className="form-group">
                         <button 
-                            className="loginButton" 
+                            className="login-button" 
                             onClick={() => onSubmit({email, password})}>
                             Login
                         </button>

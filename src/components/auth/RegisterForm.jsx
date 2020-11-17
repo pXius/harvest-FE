@@ -42,7 +42,7 @@ function RegisterForm({onSubmit}) {
 
                     <div className="">
                         <button 
-                            className="btn"
+                            className="login-button"
                             onClick={e => onSubmit({name, email, password})}>
                             Create account
                         </button>
