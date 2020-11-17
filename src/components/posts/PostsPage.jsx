@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PostsApi from '../../api/PostsApi';
-import ImageUploader from './ImageUploader';
 import NewPosts from './NewPosts';
 
 function PostsPage() {
@@ -12,9 +11,10 @@ function PostsPage() {
       setResData(lol);
       console.log(lol);
     };
-
     fetchData();
   }, []);
+
+  console.log(new Date());
 
   return (
     <div>

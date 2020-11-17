@@ -11,21 +11,23 @@ function ImageUploader({ setImgUrl }) {
     data.append('upload_preset', 'harvest');
     setPayload(data);
   };
-
   useEffect(() => {
     const abortFetch = new AbortController();
     const sendImage = async () => {
       try {
-        const response = await fetch(
-          'https://api.cloudinary.com/v1_1/dcbkjgr7c/image/upload',
-          {
-            method: 'post',
-            body: payload,
-            signal: abortFetch.signal
-          }
-        );
-        const jsonResponse = await response.json();
-        setImgUrl(jsonResponse['secure_url']);
+        if (payload !== null) {
+          const response = await fetch(
+            'https://api.cloudinary.com/v1_1/dcbkjgr7c/image/upload',
+            {
+              method: 'post',
+              body: payload,
+              signal: abortFetch.signal
+            }
+          );
+          const jsonResponse = await response.json();
+          console.log(jsonResponse['secure_url']);
+          setImgUrl(jsonResponse['secure_url']);
+        }
       } catch (error) {
         console.log(error);
       }
