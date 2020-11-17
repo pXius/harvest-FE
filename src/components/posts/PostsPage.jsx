@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import PostsApi from '../../api/PostsApi';
-import NewPosts from './NewPosts';
+import PostCard from './PostCard';
 
 function PostsPage() {
-  const [resData, setResData] = useState(null);
+  const [posts, setPosts] = useState([]);
+  const params = useParams();
+  console.log(params);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const lol = await PostsApi.getAllPosts();
-      setResData(lol);
-      console.log(lol);
+    const fetchPosts = async () => {
+      const response = await PostsApi.getAllPosts();
+      setPosts(response.data);
+      console.log(posts);
     };
-    fetchData();
+    fetchPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <div></div>;
+  const postList = posts.map(post => <PostCard key={post.id} post={post} />);
+
+  return posts === [] ? 'Loading....' : postList;
 }
 
 export default PostsPage;

@@ -33,6 +33,10 @@ function App() {
             <NewPosts />
           </Route>
 
+          <Route path="/posts/:id" exact>
+            <PostsPage />
+          </Route>
+
           <Route path="/chat">
             <ChatPage />
           </Route>
