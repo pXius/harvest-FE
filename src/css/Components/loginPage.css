@@ -1,0 +1,13 @@
+body{
+    background-image: url("..//..//Images/LoginPage/login-rectangle.png"),
+    url("..//../Images/LoginPage/Background-login.png");
+    background-position: 
+        top 0px left 100 px,
+        top 0px left 0px;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.loginForm{
+    background-color: red;
+}
