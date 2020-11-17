@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PostsApi from '../../api/PostsApi';
 import ImageUploader from './ImageUploader';
+import NewPosts from './NewPosts';
 
 function PostsPage() {
   const [resData, setResData] = useState(null);
@@ -17,7 +18,7 @@ function PostsPage() {
 
   return (
     <div>
-      <ImageUploader />
+      <NewPosts />
     </div>
   );
 }
