@@ -9,7 +9,9 @@ function PostCard({ post }) {
       <div className="card-body">
         <h5 className="card-title">{post.title}</h5>
         <div className="bottom-of-card">
-          <Link to={`/posts/${post.id}`} className="btn btn-primary">
+          <Link
+            to={{ pathname: `/posts/${post.id}`, state: { post } }}
+            className="btn btn-primary">
             View Harvest
           </Link>
           <span>{post.date}</span>
