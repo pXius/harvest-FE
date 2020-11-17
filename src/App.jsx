@@ -15,6 +15,7 @@ import ChatPage from './components/chat/ChatPage';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
+  // const [loggedIn, setLoggedIn] = useState(true);
   Auth.bindLoggedInStateSetter(setLoggedIn);
 
   const loggedInRouter = (
