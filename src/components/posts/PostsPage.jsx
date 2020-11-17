@@ -14,13 +14,7 @@ function PostsPage() {
     fetchData();
   }, []);
 
-  console.log(new Date());
-
-  return (
-    <div>
-      <NewPosts />
-    </div>
-  );
+  return <div></div>;
 }
 
 export default PostsPage;

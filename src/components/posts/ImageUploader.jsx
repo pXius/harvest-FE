@@ -25,7 +25,6 @@ function ImageUploader({ setImgUrl }) {
             }
           );
           const jsonResponse = await response.json();
-          console.log(jsonResponse['secure_url']);
           setImgUrl(jsonResponse['secure_url']);
         }
       } catch (error) {
