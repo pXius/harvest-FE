@@ -20,7 +20,7 @@ function HomePage() {
                 <p className="nextpara">Food and Agricultural Organisation estimated in 2014 that Food waste cause global social, economical and environmental cost of 2.6 trillion dollars a year and is responsible for 8% of the global greenhouse gas emission.Moreover,Food waste
                 that is not handled properly can lead to servious Environmental issues.This initiative is a small step forward to save our Environment by serving the needy people with daily meals.</p>
                 <p className="finalpara">"Together We can Change!!!"</p>
-                <button className="btn-home-claim">Start Claiming -> </button>
+                <button className="btn-home-claim">Start Claiming </button>
 
             </div>
 
@@ -54,6 +54,7 @@ function HomePage() {
         </div>
         
     );
+
 }
 
 export default HomePage;
