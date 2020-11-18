@@ -1,0 +1,33 @@
+.btn-home-claim{
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    /* Harvest pink */
+    background: #B52B65;
+    border-radius: 24px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+}
+.btn-home-claim:hover{
+    position: absolute;
+    width: 155px;
+    height: 45px;
+    /* Harvest pink */
+    background: #B52B65;
+    border-radius: 24px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+}
+.card-title{
+    font-style: "bold";
+    text-align: "center";
+    color:"#282c34"
+}
+.finalpara{
+    font-size:20;
+    color:#28a745;
+    text-align:"center";
+}
+
