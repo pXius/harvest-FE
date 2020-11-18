@@ -1,0 +1,35 @@
+.bg-dark{
+    background-color: transparent !important;
+}
+.navbar-dark .navbar-nav .nav-link{
+    color: #848484;
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: #B52B65;
+    font-size: 20px;
+}
+.logo-img{
+    height:65px;
+}
+.btn-outline-info{
+    color: #B52B65;
+    border-color: #B52B65;
+}
+.btn-outline-info:hover{
+    background-color: #B52B65;
+}
+.line{
+    position: absolute;
+    width: 1440px;
+    height: 0px;
+    left: 0px;
+    top: 107px;
+
+    /* Harvest pink */
+    border: 1px solid #B52B65;
+}
+.navbar-nav{
+    flex: none;
+    order: 0;
+    margin-left: 75%;
+}
