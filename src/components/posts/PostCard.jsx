@@ -34,3 +34,4 @@ function PostCard({ post }) {
 }
 
 export default PostCard;
+

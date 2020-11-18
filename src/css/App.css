@@ -1,6 +1,6 @@
-
 @import "./component/layout/layout.css";
 @import "./component/Post/PostsPage.css";
+@import "Home.css";
 
 body {
   min-height: 100vh;
@@ -29,3 +29,6 @@ body {
 .App-link {
   color: #09d3ac;
 }
+
+
+

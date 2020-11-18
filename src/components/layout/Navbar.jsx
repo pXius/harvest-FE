@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar({ onLogout }) {
     return (
@@ -9,19 +9,19 @@ function Navbar({ onLogout }) {
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-            <div className="collapse navbar-collapse" id="navbarColor01">
-                <ul className="navbar-nav mr-auto">
-                    <li className="nav-item">
-                        <Link to="/" className="nav-link">
-                            Home
-                            </Link>
-                    </li>
+      <div className="collapse navbar-collapse" id="navbarColor01">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
+          </li>
 
-                    <li className="nav-item">
-                        <Link to="/posts" className="nav-link">
-                            Posts
-                            </Link>
-                    </li>
+          <li className="nav-item">
+            <Link to="/posts" className="nav-link">
+              Posts
+            </Link>
+          </li>
 
                     <li className="nav-item">
                         <Link to="/posts/new" className="nav-link">
