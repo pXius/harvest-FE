@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Import custom styles for our application
 import './css/App.css';
-import harvest from '/Users/haleemathsameena/Documents/Harvest/harvest-FE/src/harvest.png'
 
 import Auth from './services/Auth';
 import Navbar from './components/layout/Navbar';
@@ -28,7 +27,7 @@ function App() {
       <Navbar onLogout={() => Auth.logout()} />
 
       <div className="container mt-5">
-      <div className ="image"img src={harvest} alt= "image "/>
+        <div className="image" />
         <Switch>
           <Route path="/posts" exact>
             <PostsPage />
