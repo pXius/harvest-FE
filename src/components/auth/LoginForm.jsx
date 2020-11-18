@@ -5,15 +5,15 @@ function LoginForm({onSubmit}) {
     const [password, setPassword] = useState("");
 
     return (
-        <div className="card">
-            <div className="card-body">
-                <h4 className="card-title" >Login</h4>
+        <div className="">
+            <div className="">
+                <h4 className="" >Login</h4>
                 <div>
-                    <div className="form-group">
+                    <div className="">
                         <label>Email:</label>
                         <input 
                             type="email"
-                            className="form-control"
+                            className=""
                             placeholder="Email"
                             value={email}
                             onChange={e => setEmail(e.target.value)} />
@@ -24,14 +24,14 @@ function LoginForm({onSubmit}) {
                         <input 
                             type="password" 
                             placeholder="Password" 
-                            className="form-control" 
+                            className="" 
                             value={password}
                             onChange={e => setPassword(e.target.value)} />
                     </div>
 
                     <div className="form-group">
                         <button 
-                            className="btn btn-info" 
+                            className="login-button" 
                             onClick={() => onSubmit({email, password})}>
                             Login
                         </button>
