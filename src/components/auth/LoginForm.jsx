@@ -42,7 +42,7 @@ function LoginForm({ onSubmit }) {
 
     <div class="login">
       <div class="group">
-        <label for="email" class="label">
+        <label htmlFor="email" class="label">
           Email
         </label>
         <input
@@ -55,7 +55,7 @@ function LoginForm({ onSubmit }) {
         />
       </div>
       <div class="group">
-        <label for="pass" class="label">
+        <label htmlFor="pass" class="label">
           Password
         </label>
         <input

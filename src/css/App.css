@@ -1,6 +1,9 @@
-@import './Components/layout/layout.css';
-@import './Components/Post/PostsPage.css';
-@import 'Home.css';
+@import "./Components/layout/layout.css";
+@import "./Components/Post/PostsPage.css";
+@import "./Components/Chat/ChatPage.css";
+@import "./Components/Post/SinglePostPage.css";
+@import "./Components/Home/Home.css";
+@import "./Components/auth/LoginNew.css";
 
 body {
   min-height: 100vh;
