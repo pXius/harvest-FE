@@ -42,11 +42,11 @@ function LoginForm({onSubmit}) {
 
         <div class="login"> 
             <div class="group"> 
-                <label for="email" class="label">Email</label> 
+                <label htmlFor="email" class="label">Email</label> 
                 <input id="email" type="text" value={email} className="input" onChange={e => setEmail(e.target.value)}  placeholder="Enter your email"/> 
             </div>
             <div class="group"> 
-                <label for="pass" class="label">Password</label> 
+                <label htmlFor="pass" class="label">Password</label> 
                 <input id="pass" type="password" value={password} class="input" onChange={e => setPassword(e.target.value)} data-type="password" placeholder="Enter your password"/> 
             </div>
             <div class="group"> 

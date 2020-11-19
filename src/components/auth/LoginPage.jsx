@@ -3,9 +3,6 @@ import Auth from "../../services/Auth";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 
-//Styling 
-import loginPage from "..//../css/Components/LoginNew.css";
-
 function LoginPage() {
     const login = async (loginData) => {
         const loginSuccess = await Auth.login(loginData);

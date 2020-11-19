@@ -62,7 +62,7 @@ function SinglePost() {
         </div>
       </div> */
 
-      <div className="col-md-3 col-sm-6">
+/*       <div className="col-md-3 col-sm-6">
       <div className="product-grid4">
           <div className="product-image4">
               <a href="#">
@@ -80,7 +80,7 @@ function SinglePost() {
               </div>
               <div className="bottom-of-card">
               {isPoster ? (
-                <button onClick={handleClick} type="button" className="btn btn-warning">
+                <button onClick={handleClaim} type="button" className="btn btn-warning">
                   {post.claimed ? 'Set Available' : 'Set Claimed'}
                 </button>
               ) : null}
@@ -88,7 +88,50 @@ function SinglePost() {
             </div>
           </div>
       </div>
-      </div>
+      </div> */
+
+      <div className="singlePost-card">
+			<div className="container-fliud">
+				<div className="wrapper row">
+					<div className="preview col-md-6">
+						
+						<div className="preview-pic tab-content">
+						  <div className="tab-pane active" id="pic-1"><img src={post.imageUrl} alt="Single post img" /></div>
+						</div>
+						
+					</div>
+					<div className="details col-md-6">
+						<h3 className="product-title">{post.title}</h3>
+						<div className="rating">
+							<div className="stars">
+								<span className="fa fa-star checked"></span>
+								<span className="fa fa-star checked"></span>
+								<span className="fa fa-star checked"></span>
+								<span className="fa fa-star unchecked"></span>
+								<span className="fa fa-star unchecked"></span>
+							</div>
+							<span className="review-no">41 reviews</span>
+						</div>
+						<p className="product-description">{post.body}</p>
+						<div className="action">
+							
+              {isPoster ? (
+                <button className="singlePost-btn btn btn-default" onClick={handleClaim} type="button">
+                {post.claimed ? 'Set Available' : 'Set Claimed'}</button>
+              ) : null}
+
+              {isPoster ? null : (
+                <button className="singlePost-btn btn btn-default" onClick={messageHandler} type="button">
+                  Message Poster</button>
+              )}
+
+              <button className="like btn btn-default" type="button"><span className="fa fa-heart"></span></button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
     );
   } catch (e) {

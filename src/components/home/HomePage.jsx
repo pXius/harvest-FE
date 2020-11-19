@@ -31,16 +31,16 @@ function HomePage() {
         <div className="col-md-9">
           {/* <img src={home} alt="home"style={{height:"auto" , width:"100%"}} /> */}
 
-          <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-interval="400">
-                <img src={slide1} style={{height:"650px"}} class="d-block w-100" alt="..." />
+          <div id="carouselExampleInterval" className="carousel slide" data-ride="carousel">
+            <div className="carousel-inner">
+              <div className="carousel-item active" data-interval="400">
+                <img src={slide1} style={{height:"650px"}} className="d-block w-100" alt="..." />
               </div>
-              <div class="carousel-item" data-interval="2000">
-                <img src={slide2} style={{height:"650px"}} class="d-block w-100" alt="..." />
+              <div className="carousel-item" data-interval="2000">
+                <img src={slide2} style={{height:"650px"}} className="d-block w-100" alt="..." />
               </div>
-              <div class="carousel-item">
-                <img src={slide3} style={{height:"650px"}} class="d-block w-100" alt="..." />
+              <div className="carousel-item">
+                <img src={slide3} style={{height:"650px"}} className="d-block w-100" alt="..." />
               </div>
             </div>
             <a
@@ -48,16 +48,16 @@ function HomePage() {
               href="#carouselExampleInterval"
               role="button"
               data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
+              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span className="sr-only">Previous</span>
             </a>
             <a
               class="carousel-control-next"
               href="#carouselExampleInterval"
               role="button"
               data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
+              <span className="carousel-control-next-icon" aria-hidden="true"></span>
+              <span className="sr-only">Next</span>
             </a>
           </div>
         </div>
