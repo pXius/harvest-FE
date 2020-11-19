@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { atob } from 'js-base64';
-import { useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import ErrorScreen from '../tempscreens/ErrorScreen';
 import PostsApi from '../../api/PostsApi';
 import ChatApi from '../../api/ChatApi';
 
 function SinglePost() {
-  const tokenKey = window.sessionStorage.getItem('_token');
+  const userEmail = window.sessionStorage.getItem('userEmail');
   const { state } = useLocation();
   const passedPost = state === undefined ? null : state.post;
   const [post, setPost] = useState(passedPost);
   const history = useHistory();
+  const isPoster = userEmail === post.email;
 
   const handleClaim = () => {
     const setClaimed = async () => {
@@ -28,8 +28,8 @@ function SinglePost() {
     const createOrDirect = async () => {
       try {
         const response = await ChatApi.createThread(post.email, {});
-        console.log(response);
-        history.push(`/chat/${response.data.id}`);
+        const thread = response.data;
+        history.push({ pathname: `/chat/${thread.id}`, state: { thread } });
       } catch (e) {
         console.log(e);
       }
@@ -37,9 +37,8 @@ function SinglePost() {
     createOrDirect();
   };
   try {
-    const isPoster = atob(tokenKey).includes(post.email);
     return (
- /*      <div className="card single-card">
+      /*      <div className="card single-card">
         <div className="card-header">{post.claimed ? 'Claimed' : 'Available'}</div>
         <img className="card-img-top" src={post.imageUrl} alt="" />
         <div className="card-body">
@@ -65,28 +64,43 @@ function SinglePost() {
 /*       <div className="col-md-3 col-sm-6">
       <div className="product-grid4">
           <div className="product-image4">
-              <a href="#">
-                  <img className={post.claimed ? 'claimed pic-1' : 'pic-1'}
-                      src={post.imageUrl} />
-                      <img className={post.claimed ? 'claimed pic-2' : 'pic-2'}
-                          src={post.imageUrl} />
-              </a>
+            <a href="#">
+              <img
+                className={post.claimed ? 'claimed pic-1' : 'pic-1'}
+                src={post.imageUrl}
+              />
+              <img
+                className={post.claimed ? 'claimed pic-2' : 'pic-2'}
+                src={post.imageUrl}
+              />
+            </a>
           </div>
           <div className="product-content">
-              <h3 className="title"><a href="#">{post.title}</a></h3>
-              <div className="info">
-                  <span>{post.date}</span><br/>
-                  <span>{post.body}</span>
-              </div>
-              <div className="bottom-of-card">
+            <h3 className="title">
+              <a href="#">{post.title}</a>
+            </h3>
+            <div className="info">
+              <span>{post.date}</span>
+              <br />
+              <span>{post.body}</span>
+            </div>
+            <div className="bottom-of-card">
               {isPoster ? (
                 <button onClick={handleClaim} type="button" className="btn btn-warning">
                   {post.claimed ? 'Set Available' : 'Set Claimed'}
                 </button>
               ) : null}
-              
+              {isPoster ? null : (
+                <button
+                  type="button"
+                  onClick={messageHandler}
+                  className="btn btn-primary">
+                  Message Poster
+                </button>
+              )}
             </div>
           </div>
+        </div>
       </div>
       </div> */
 
