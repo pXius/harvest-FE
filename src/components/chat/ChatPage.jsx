@@ -41,23 +41,30 @@ function ChatPage() {
     return () => clearInterval(poll);
   }, [id]);
 
-  const messages = messageArray.map(message => {
-    if (message.senderEmail === loggedInUser) {
-      return (
-        <div key={message.id}>
-          <div className="card text-white bg-primary mb-3">{message.messageBody}</div>
-          <p>{message.date}</p>
-        </div>
-      );
-    } else {
-      return (
-        <div key={message.id}>
-          <div className="card text-white bg-success mb-3">{message.messageBody}</div>
-          <p>{message.date}</p>
-        </div>
-      );
-    }
-  });
+  const messages =
+    messageArray === null
+      ? null
+      : messageArray.map(message => {
+          if (message.senderEmail === loggedInUser) {
+            return (
+              <div key={message.id}>
+                <div className="card text-white bg-primary mb-3">
+                  {message.messageBody}
+                </div>
+                <p>{message.date}</p>
+              </div>
+            );
+          } else {
+            return (
+              <div key={message.id}>
+                <div className="card text-white bg-success mb-3">
+                  {message.messageBody}
+                </div>
+                <p>{message.date}</p>
+              </div>
+            );
+          }
+        });
 
   return (
     <div className="card border-primary mb-3">
