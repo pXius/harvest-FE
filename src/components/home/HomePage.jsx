@@ -1,14 +1,14 @@
 import React from 'react';
-import slide1 from '../../Images/HOME.png';
-import slide2 from '../../Images/vegetables.jpg';
-import slide3 from '../../Images/cheese.jpg';
+import slide1 from '../../Images/slide1.png';
+import slide2 from '../../Images/slide2.jpg';
+import slide3 from '../../Images/slide3.jpg';
 
 function HomePage() {
   return (
     <div className="container">
-      <div className="row">
-        <div className="col-md-3">
-          <h4 className="card-title">Harvest</h4>
+      <div className="row home-data">
+        <div style={{marginTop:"3%"}} className="col-md-3">
+          <h1 className="card-title">Harvest</h1>
 
           <p className="smallpara">
             Harvest was started as an initiative to compact Food Waste.
@@ -20,8 +20,8 @@ function HomePage() {
             Food and Agricultural Organisation estimated in 2014 that Food waste cause
             global social, economical and environmental cost of 2.6 trillion dollars a
             year and is responsible for 8% of the global greenhouse gas
-            emission.Moreover,Food waste that is not handled properly can lead to servious
-            Environmental issues.This initiative is a small step forward to save our
+            emission. Moreover, Food waste that is not handled properly can lead to servious
+            Environmental issues. This initiative is a small step forward to save our
             Environment by serving the needy people with daily meals.
           </p>
           <p className="finalpara">"Together We can Change!!!"</p>
@@ -33,14 +33,14 @@ function HomePage() {
 
           <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active" data-interval="10000">
-                <img src={slide1} class="d-block w-100" alt="..." />
+              <div class="carousel-item active" data-interval="400">
+                <img src={slide1} style={{height:"650px"}} class="d-block w-100" alt="..." />
               </div>
               <div class="carousel-item" data-interval="2000">
-                <img src={slide2} class="d-block w-100" alt="..." />
+                <img src={slide2} style={{height:"650px"}} class="d-block w-100" alt="..." />
               </div>
               <div class="carousel-item">
-                <img src={slide3} class="d-block w-100" alt="..." />
+                <img src={slide3} style={{height:"650px"}} class="d-block w-100" alt="..." />
               </div>
             </div>
             <a

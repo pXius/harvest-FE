@@ -35,15 +35,14 @@ function ImageUploader({ setImgUrl }) {
     return () => abortFetch.abort();
   }, [payload, setImgUrl]);
 
-  return (
-    <div>
+  return (   
       <ReactImageUploadComponent
         singleImage={true}
         onChange={updateImage}
         buttonText="Choose Image"
         className="imgUploader"
-      />
-    </div>
+        withPreview={true}
+      />    
   );
 }
 

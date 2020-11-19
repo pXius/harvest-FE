@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Navbar({ onLogout }) {
     return (
@@ -12,27 +12,27 @@ function Navbar({ onLogout }) {
       <div className="collapse navbar-collapse" id="navbarColor01">
         <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
-                        <Link to="/" className="nav-link">
+                        <NavLink exact to="/" className="nav-link" activeClassName="active-link">
                         Home
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li className="nav-item">
-                        <Link to="/posts" className="nav-link">
+                        <NavLink exact to="/posts" className="nav-link" activeClassName="active-link">
                         Posts
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li className="nav-item">
-                        <Link to="/posts/new" className="nav-link">
+                        <NavLink exact to="/posts/new" className="nav-link" activeClassName="active-link">
                         New Post
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li className="nav-item">
-                        <Link to="/chat" className="nav-link">
+                        <NavLink exact to="/chat" className="nav-link" activeClassName="active-link">
                             Chat
-                        </Link>
+                        </NavLink>
                     </li>
          </ul>
             <button className="btn btn-outline-info my-2 my-sm-0" onClick={onLogout}>Logout</button>
