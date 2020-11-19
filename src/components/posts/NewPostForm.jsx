@@ -31,7 +31,7 @@ function NewPostForm({ setPost }) {
             type="text"
             className="form-control"
             id="formGroupExampleInput"
-            placeholder="Post as..."
+            placeholder="Company or individual name"
             onChange={e => setPostAs(e.target.value)}
           />
         </div>
@@ -51,7 +51,7 @@ function NewPostForm({ setPost }) {
             type="text"
             className="form-control"
             id="formGroupExampleInput3"
-            placeholder="Details about the donation?...  expiry date, quantity, or anything else you would like to share."
+            placeholder="State details such as expiry date, quantity, or anything else you would like to share about the donation."
             rows="3"
             onChange={e => setDetails(e.target.value)}
           />

@@ -80,7 +80,9 @@ function SinglePost() {
               </div>
               <div className="bottom-of-card">
               {isPoster ? (
-                <button onClick={handleClick} type="button" className="btn btn-warning">
+                <button 
+                //onClick=//{handleClick} 
+                type="button" className="btn btn-warning">
                   {post.claimed ? 'Set Available' : 'Set Claimed'}
                 </button>
               ) : null}
