@@ -43,24 +43,6 @@ function ChatPage() {
     return () => clearInterval(poll);
   }, [id]);
 
-  /*   const messages = messageArray.map(message => {
-    if (message.senderEmail === loggedInUser) {
-      return (
-        <div key={message.id}>
-          <div className="card text-white bg-primary mb-3">{message.messageBody}</div>
-          <p>{message.date}</p>
-        </div>
-      );
-    } else {
-      return (
-        <div key={message.id}>
-          <div className="card text-white bg-success mb-3">{message.messageBody}</div>
-          <p>{message.date}</p>
-        </div>
-      );
-    }
-  }); */
-
   const messages =
     messageArray === null
       ? null
@@ -93,25 +75,6 @@ function ChatPage() {
         });
 
   return (
-    /* <div className="card border-primary mb-3">
-      <div className="card-header">Message Box</div>
-      <div className="card-body text-dark">
-        {messages}
-        <form>
-          <div className="form-group">
-            <input
-              onChange={e => setMessageText(e.target.value)}
-              className="form-control"
-              id="chatInput"
-            />
-          </div>
-          <button onClick={handleClick} className="btn btn-primary">
-            Send
-          </button>
-        </form>
-      </div>
-    </div> */
-
     <div className="messaging">
       <div className="inbox_msg">
         <div className="inbox_people">
