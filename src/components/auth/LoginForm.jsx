@@ -5,7 +5,7 @@ function LoginForm({onSubmit}) {
     const [password, setPassword] = useState("");
 
     return (
-        <div className="">
+        /* <div className="">
             <div className="">
                 <h4 className="" >Login</h4>
                 <div>
@@ -38,7 +38,23 @@ function LoginForm({onSubmit}) {
                     </div>
                 </div>
             </div>
+        </div> */
+
+        <div class="login"> 
+            <div class="group"> 
+                <label for="email" class="label">Email</label> 
+                <input id="email" type="text" value={email} className="input" onChange={e => setEmail(e.target.value)}  placeholder="Enter your email"/> 
+            </div>
+            <div class="group"> 
+                <label for="pass" class="label">Password</label> 
+                <input id="pass" type="password" value={password} class="input" onChange={e => setPassword(e.target.value)} data-type="password" placeholder="Enter your password"/> 
+            </div>
+            <div class="group"> 
+                <input type="submit" class="button" onClick={() => onSubmit({email, password})} value="Sign In"/> 
+            </div>
+            <div class="hr"></div>
         </div>
+
     );
 }
 

@@ -12,9 +12,11 @@ import Navbar from './components/layout/Navbar';
 import LoginPage from './components/auth/LoginPage';
 import HomePage from './components/home/HomePage';
 import PostsPage from './components/posts/PostsPage';
-import ChatPage from './components/chat/ChatPage';
+// import ChatPage from './components/chat/ChatPage';
 import NewPosts from './components/posts/NewPosts';
 import SinglePost from './components/posts/SinglePost';
+import ThreadPage from './components/chat/ThreadPage';
+import ChatPage from './components/chat/ChatPage';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
@@ -27,29 +29,33 @@ function App() {
       <Navbar onLogout={() => Auth.logout()} />
 
       <div className="container mt-5">
-        <div className="image" />
-        <Switch>
-          <Route path="/posts" exact>
-            <PostsPage />
-          </Route>
+          <div className="row" />
+          <Switch>
+            <Route path="/posts" exact>
+              <PostsPage />
+            </Route>
 
-          <Route path="/posts/new">
-            <NewPosts />
-          </Route>
+            <Route path="/posts/new">
+              <NewPosts />
+            </Route>
 
-          <Route path="/posts/:id" exact>
-            <SinglePost />
-          </Route>
+            <Route path="/posts/:id">
+              <SinglePost />
+            </Route>
 
-          <Route path="/chat">
-            <ChatPage />
-          </Route>
+            <Route path="/chat" exact>
+              <ThreadPage />
+            </Route>
 
-          <Route path="/">
-            <HomePage />
-          </Route>
-        </Switch>
-      </div>
+            <Route path="/chat/:id">
+              <ChatPage />
+            </Route>
+
+            <Route path="/">
+              <HomePage />
+            </Route>
+          </Switch>
+        </div>
     </Router>
   );
 
