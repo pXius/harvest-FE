@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Api from '../../api/Api';
 
 
 export default function NewCommentForm({onSubmit}){
@@ -28,3 +27,4 @@ export default function NewCommentForm({onSubmit}){
         </div> 
     )
 }
+
