@@ -12,7 +12,6 @@ function NewPosts() {
       try {
         if (post !== null) {
           const response = await PostsApi.createPost(post);
-          console.log(response.data);
           history.push('/posts');
         }
       } catch (error) {
@@ -22,9 +21,7 @@ function NewPosts() {
     createPost();
   }, [history, post]);
 
-  return (
-      <NewPostForm setPost={setPost} />
-  );
+  return <NewPostForm setPost={setPost} />;
 }
 
 export default NewPosts;
