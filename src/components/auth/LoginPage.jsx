@@ -4,7 +4,7 @@ import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 
 //Styling 
-import loginPage from "..//../css/Components/loginPage.css";
+import loginPage from "..//../css/Components/LoginNew.css";
 
 function LoginPage() {
     const login = async (loginData) => {
@@ -22,7 +22,7 @@ function LoginPage() {
     }
 
     return (
-        <div class="login-container">
+        /* <div class="login-container">
         <div className="loginNSignup">
                         <h5>ACCOUNT LOGIN</h5>
                         <div className="loginForm">
@@ -33,7 +33,30 @@ function LoginPage() {
     </div>
                         </div>
                     </div>
+                    </div> */
+
+        <div className="row">
+            <div class="login-container">
+                <div class="card">
+                    <div class="login-box">
+                        <div class="login-snip"> 
+                            <input id="tab-1" type="radio" name="tab" class="sign-in" checked />
+                            <label for="tab-1" class="tab">Login</label> 
+                            <input id="tab-2" type="radio" name="tab" class="sign-up"/>
+                            <label for="tab-2" class="tab">Sign Up</label>
+                            <div class="login-space">
+                                       
+                                <LoginForm onSubmit={login} />  
+                                
+                                   
+                                <RegisterForm onSubmit={register} />
+                                
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
     );
 }
 

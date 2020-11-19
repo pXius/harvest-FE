@@ -29,33 +29,33 @@ function App() {
       <Navbar onLogout={() => Auth.logout()} />
 
       <div className="container mt-5">
-        <div className="image" />
-        <Switch>
-          <Route path="/posts" exact>
-            <PostsPage />
-          </Route>
+          <div className="row" />
+          <Switch>
+            <Route path="/posts" exact>
+              <PostsPage />
+            </Route>
 
-          <Route path="/posts/new">
-            <NewPosts />
-          </Route>
+            <Route path="/posts/new">
+              <NewPosts />
+            </Route>
 
-          <Route path="/posts/:id">
-            <SinglePost />
-          </Route>
+            <Route path="/posts/:id">
+              <SinglePost />
+            </Route>
 
-          <Route path="/chat" exact>
-            <ThreadPage />
-          </Route>
+            <Route path="/chat" exact>
+              <ThreadPage />
+            </Route>
 
-          <Route path="/chat/:id">
-            <ChatPage />
-          </Route>
+            <Route path="/chat/:id">
+              <ChatPage />
+            </Route>
 
-          <Route path="/">
-            <HomePage />
-          </Route>
-        </Switch>
-      </div>
+            <Route path="/">
+              <HomePage />
+            </Route>
+          </Switch>
+        </div>
     </Router>
   );
 

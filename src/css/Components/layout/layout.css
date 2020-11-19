@@ -8,6 +8,10 @@
     color: #B52B65;
     font-size: 20px;
 }
+.active-link{
+    color: #B52B65 !important;
+    font-size: 20px;
+}
 .logo-img{
     height:65px;
 }
@@ -31,5 +35,5 @@
 .navbar-nav{
     flex: none;
     order: 0;
-    margin-left: 75%;
+    margin-left: 72%;
 }
