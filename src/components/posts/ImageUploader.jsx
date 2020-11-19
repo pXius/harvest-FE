@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactImageUploadComponent from 'react-images-upload';
 
-function ImageUploader({ setImgUrl }) {
+function ImageUploader({ setImgUrl, setUploading }) {
   const [payload, setPayload] = useState(null);
 
   const updateImage = event => {
@@ -26,6 +26,7 @@ function ImageUploader({ setImgUrl }) {
           );
           const jsonResponse = await response.json();
           setImgUrl(jsonResponse['secure_url']);
+          setUploading(false);
         }
       } catch (error) {
         console.log(error);
@@ -35,14 +36,14 @@ function ImageUploader({ setImgUrl }) {
     return () => abortFetch.abort();
   }, [payload, setImgUrl]);
 
-  return (   
-      <ReactImageUploadComponent
-        singleImage={true}
-        onChange={updateImage}
-        buttonText="Choose Image"
-        className="imgUploader"
-        withPreview={true}
-      />    
+  return (
+    <ReactImageUploadComponent
+      singleImage={true}
+      onChange={updateImage}
+      buttonText="Choose Image"
+      className="imgUploader"
+      withPreview={true}
+    />
   );
 }
 

@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
 import ChatApi from '../../api/ChatApi';
+import ChatPage from './ChatPage';
 import Thread from './Thread';
 
 function ThreadPage() {
   const [threads, setThreads] = useState([]);
+  const { id } = useParams();
+  const { state } = useLocation();
+  const locationState = state === null || state === undefined ? '' : state.thread;
+  const paramsId = id === null || id === undefined ? '' : id;
+  const [messageBox, setMessageBox] = useState({ threadId: id, thread: locationState });
 
   useEffect(() => {
     const getThreads = async () => {
@@ -13,8 +20,9 @@ function ThreadPage() {
     getThreads();
   }, []);
 
-  const listOfThreads = threads.map(thread => <Thread key={thread.id} thread={thread} />);
-
+  const listOfThreads = threads.map(thread => (
+    <Thread key={thread.id} setMessageBox={setMessageBox} thread={thread} />
+  ));
   return (
     <div>
       <div className="messaging">
@@ -36,7 +44,11 @@ function ThreadPage() {
               </div>
             </div>
           </div>
-          <div className="mesgs"></div>
+          <div className="mesgs">
+            {messageBox.thread === '' ? null : (
+              <ChatPage id={messageBox.threadId} thread={messageBox.thread} />
+            )}
+          </div>
         </div>
       </div>
     </div>

@@ -1,9 +1,11 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import slide1 from '../../Images/slide1.png';
 import slide2 from '../../Images/slide2.jpg';
 import slide3 from '../../Images/slide3.jpg';
 
 function HomePage() {
+  const history = useHistory();
   return (
     <div className="container">
       <div className="row home-data">
@@ -25,7 +27,9 @@ function HomePage() {
             Environment by serving the needy people with daily meals.
           </p>
           <p className="finalpara">"Together We can Change!!!"</p>
-          <button className="btn-home-claim">Start Claiming </button>
+          <button onClick={() => history.push('/posts')} className="btn-home-claim">
+            Start Claiming{' '}
+          </button>
         </div>
 
         <div className="col-md-9">

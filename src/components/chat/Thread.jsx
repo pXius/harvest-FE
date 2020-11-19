@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Thread({ thread }) {
+function Thread({ thread, setMessageBox }) {
   const senderMail = window.sessionStorage.getItem('userEmail');
   const receiverEmail = senderMail === thread.p1Email ? thread.p2Email : thread.p1Email;
   const receiverMessage = thread.receiverMessage;
+
+  const clickHandler = () => {
+    setMessageBox({ threadId: thread.id, thread: thread });
+  };
 
   // Massive Blue Boxes
   return (
@@ -15,7 +19,7 @@ function Thread({ thread }) {
       </div>
       <div className="chat_ib">
         <h5>
-          <Link to={{ pathname: `/chat/${thread.id}`, state: { thread } }}>
+          <Link to="/chat" onClick={clickHandler}>
             {receiverEmail}
           </Link>
           <span className="chat_date">Dec 25</span>

@@ -19,9 +19,9 @@ function PostCard({ post }) {
             />
           </a>
           {post.claimed ? (
-            <span class="product-new-label">Claimed</span>
+            <span className="product-new-label">Claimed</span>
           ) : (
-            <span class="product-new-label">Available</span>
+            <span className="product-new-label">Available</span>
           )}
         </div>
         <div className="product-content">

@@ -1,27 +1,22 @@
 import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
 import ChatApi from '../../api/ChatApi';
-import { Link } from 'react-router-dom';
 
-function ChatPage() {
-  const { state } = useLocation();
-  const thread = state.thread;
-  const { id } = useParams();
+function ChatPage({ id, thread }) {
   const loggedInUser = window.sessionStorage.getItem('userEmail');
   const receiverEmail = loggedInUser === thread.p1Email ? thread.p2Email : thread.p1Email;
-  const [messageText, setMessageText] = useState('');
+  const [messageText, setMessageText] = useState({ text: '' });
   const [messageArray, setMessageArray] = useState(thread.thread);
-  const receiverMessage = thread.receiverMessage;
 
   const sendMessage = async () => {
     try {
       const response = await ChatApi.createMessage(id, receiverEmail, {
-        messageBody: messageText,
+        messageBody: messageText.text,
         thread: { id: id },
         date: format(new Date(), 'dd-MMM-yyyy HH:MM')
       });
       setMessageArray([...messageArray, response.data]);
+      setMessageText({ text: '' });
     } catch (e) {
       console.log(e);
     }
@@ -75,59 +70,25 @@ function ChatPage() {
         });
 
   return (
-    <div className="messaging">
-      <div className="inbox_msg">
-        <div className="inbox_people">
-          <div className="headind_srch">
-            <div className="recent_heading">
-              <h4>Recent</h4>
-            </div>
-            <div className="srch_bar">
-              <div className="stylish-input-group">
-                <input type="text" className="search-bar" placeholder="Search" />
-              </div>
-            </div>
-          </div>
-          <div className="inbox_chat scroll">
-            <div className="chat_list active_chat">
-              <div className="chat_people">
-                <div className="chat_img">
-                  {' '}
-                  <img src="/images/sender.jpeg" alt="name" />{' '}
-                </div>
-                <div className="chat_ib">
-                  <h5>
-                    <Link to={{ pathname: `/chat/${thread.id}`, state: { thread } }}>
-                      {receiverEmail}
-                    </Link>
-                    <span className="chat_date">Dec 25</span>
-                  </h5>
-                  <p>{receiverMessage}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mesgs">
-          <div className="msg_history">{messages}</div>
-          <div className="type_msg">
-            <div className="input_msg_write">
-              <input
-                id="chatInput"
-                type="text"
-                className="write_msg"
-                onChange={e => setMessageText(e.target.value)}
-                placeholder="Type a message"
-              />
-              <button className="msg_send_btn" onClick={handleClick} type="button">
-                <i className="fa fa-paper-plane" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
+    <form>
+      <div className="msg_history">{messages}</div>
+      <div className="type_msg">
+        <div className="input_msg_write">
+          <input
+            autoFocus
+            value={messageText.text}
+            id="chatInput"
+            type="text"
+            className="write_msg"
+            onChange={e => setMessageText({ text: e.target.value })}
+            placeholder="Type a message"
+          />
+          <button className="msg_send_btn" onClick={handleClick} type="submit">
+            <i className="fa fa-paper-plane" aria-hidden="true"></i>
+          </button>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
 

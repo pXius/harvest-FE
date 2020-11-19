@@ -40,9 +40,9 @@ function LoginForm({ onSubmit }) {
             </div>
         </div> */
 
-    <div class="login">
-      <div class="group">
-        <label htmlFor="email" class="label">
+    <div className="login">
+      <div className="group">
+        <label htmlFor="email" className="label">
           Email
         </label>
         <input
@@ -54,29 +54,29 @@ function LoginForm({ onSubmit }) {
           placeholder="Enter your email"
         />
       </div>
-      <div class="group">
-        <label htmlFor="pass" class="label">
+      <div className="group">
+        <label htmlFor="pass" className="label">
           Password
         </label>
         <input
           id="pass"
           type="password"
           value={password}
-          class="input"
+          className="input"
           onChange={e => setPassword(e.target.value)}
           data-type="password"
           placeholder="Enter your password"
         />
       </div>
-      <div class="group">
+      <div className="group">
         <input
           type="submit"
-          class="button"
+          className="button"
           onClick={() => onSubmit({ email, password })}
           value="Sign In"
         />
       </div>
-      <div class="hr"></div>
+      <div className="hr"></div>
     </div>
   );
 }

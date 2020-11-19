@@ -52,57 +52,57 @@ function RegisterForm({ onSubmit }) {
             </div>
         </div> */
 
-    <div class="sign-up-form">
-      <div class="group">
-        <label for="user" class="label">
+    <div className="sign-up-form">
+      <div className="group">
+        <label for="user" className="label">
           Username
         </label>
         <input
           id="user"
           type="text"
-          class="input"
+          className="input"
           value={name}
           onChange={e => setName(e.target.value)}
           placeholder="Create your Username"
         />
       </div>
-      <div class="group">
-        <label for="email" class="label">
+      <div className="group">
+        <label for="email" className="label">
           Email Address
         </label>
         <input
           id="email"
           type="text"
-          class="input"
+          className="input"
           value={email}
           onChange={e => setEmail(e.target.value)}
           placeholder="Enter your email address"
         />
       </div>
-      <div class="group">
-        <label for="pass" class="label">
+      <div className="group">
+        <label for="pass" className="label">
           Password
         </label>
         <input
           id="pass"
           type="password"
-          class="input"
+          className="input"
           value={password}
           onChange={e => setPassword(e.target.value)}
           data-type="password"
           placeholder="Create your password"
         />
       </div>
-      <div class="group">
+      <div className="group">
         <input
           type="submit"
-          class="button"
+          className="button"
           onClick={e => onSubmit({ name, email, password })}
           value="Sign Up"
         />
       </div>
-      <div class="hr"></div>
-      <div class="foot">
+      <div className="hr"></div>
+      <div className="foot">
         {' '}
         <label for="tab-1">Already Member?</label>{' '}
       </div>

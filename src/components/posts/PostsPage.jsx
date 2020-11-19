@@ -14,7 +14,7 @@ function PostsPage() {
 
   const postList = posts.map(post => <PostCard key={post.id} post={post} />);
 
-  return posts === [] ? 'Loading....' : postList;
+  return posts === [] ? 'Loading....' : <div className="posts-grid">{postList}</div>;
 }
 
 export default PostsPage;
