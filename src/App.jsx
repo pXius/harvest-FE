@@ -16,6 +16,7 @@ import PostsPage from './components/posts/PostsPage';
 import NewPosts from './components/posts/NewPosts';
 import SinglePost from './components/posts/SinglePost';
 import ThreadPage from './components/chat/ThreadPage';
+import ChatPage from './components/chat/ChatPage';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
@@ -38,12 +39,16 @@ function App() {
             <NewPosts />
           </Route>
 
-          <Route path="/posts/:id" exact>
+          <Route path="/posts/:id">
             <SinglePost />
           </Route>
 
-          <Route path="/chat">
+          <Route path="/chat" exact>
             <ThreadPage />
+          </Route>
+
+          <Route path="/chat/:id">
+            <ChatPage />
           </Route>
 
           <Route path="/">

@@ -11,7 +11,7 @@ function ThreadPage() {
     getThreads();
   }, []);
 
-  return <ChatPage />;
+  return <div></div>;
 }
 
 export default ThreadPage;

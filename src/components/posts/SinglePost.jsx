@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { atob } from 'js-base64';
-import { useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import ErrorScreen from '../tempscreens/ErrorScreen';
 import PostsApi from '../../api/PostsApi';
 import ChatApi from '../../api/ChatApi';
@@ -10,6 +10,7 @@ function SinglePost() {
   const { state } = useLocation();
   const passedPost = state === undefined ? null : state.post;
   const [post, setPost] = useState(passedPost);
+  const history = useHistory();
 
   const handleClaim = () => {
     const setClaimed = async () => {
@@ -28,6 +29,7 @@ function SinglePost() {
       try {
         const response = await ChatApi.createThread(post.email, {});
         console.log(response);
+        history.push(`/chat/${response.data.id}`);
       } catch (e) {
         console.log(e);
       }
