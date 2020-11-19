@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { atob } from 'js-base64';
 import { useHistory, useLocation } from 'react-router-dom';
 import ErrorScreen from '../tempscreens/ErrorScreen';
 import PostsApi from '../../api/PostsApi';
 import ChatApi from '../../api/ChatApi';
 
 function SinglePost() {
-  const tokenKey = window.sessionStorage.getItem('_token');
+  const userEmail = window.sessionStorage.getItem('userEmail');
   const { state } = useLocation();
   const passedPost = state === undefined ? null : state.post;
   const [post, setPost] = useState(passedPost);
   const history = useHistory();
+  const isPoster = userEmail === post.email;
 
   const handleClaim = () => {
     const setClaimed = async () => {
@@ -28,8 +28,8 @@ function SinglePost() {
     const createOrDirect = async () => {
       try {
         const response = await ChatApi.createThread(post.email, {});
-        console.log(response);
-        history.push(`/chat/${response.data.id}`);
+        const thread = response.data;
+        history.push({ pathname: `/chat/${thread.id}`, state: { thread } });
       } catch (e) {
         console.log(e);
       }
@@ -37,7 +37,6 @@ function SinglePost() {
     createOrDirect();
   };
   try {
-    const isPoster = atob(tokenKey).includes(post.email);
     return (
       /*      <div className="card single-card">
         <div className="card-header">{post.claimed ? 'Claimed' : 'Available'}</div>
@@ -91,6 +90,14 @@ function SinglePost() {
                   {post.claimed ? 'Set Available' : 'Set Claimed'}
                 </button>
               ) : null}
+              {isPoster ? null : (
+                <button
+                  type="button"
+                  onClick={messageHandler}
+                  className="btn btn-primary">
+                  Message Poster
+                </button>
+              )}
             </div>
           </div>
         </div>
