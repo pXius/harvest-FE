@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function PostCard({ post }) {
+
     return (
                 <div className="col-md-3 col-sm-6">
                     <div className="product-grid4">
@@ -30,7 +31,7 @@ function PostCard({ post }) {
                     </div>
                 </div>
     );
+
 }
 
 export default PostCard;
-
