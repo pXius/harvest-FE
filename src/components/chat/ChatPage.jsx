@@ -7,8 +7,8 @@ function ChatPage() {
   const { state } = useLocation();
   const thread = state.thread;
   const { id } = useParams();
-  const senderMail = window.sessionStorage.getItem('userEmail');
-  const receiverEmail = senderMail === thread.p1Email ? thread.p2Email : thread.p1Email;
+  const loggedInUser = window.sessionStorage.getItem('userEmail');
+  const receiverEmail = loggedInUser === thread.p1Email ? thread.p2Email : thread.p1Email;
   const [messageText, setMessageText] = useState('');
   const [messageArray, setMessageArray] = useState(thread.thread);
 
@@ -42,7 +42,7 @@ function ChatPage() {
   }, [id]);
 
   const messages = messageArray.map(message => {
-    if (message.senderEmail === senderMail) {
+    if (message.senderEmail === loggedInUser) {
       return (
         <div key={message.id}>
           <div className="card text-white bg-primary mb-3">{message.messageBody}</div>
@@ -63,10 +63,6 @@ function ChatPage() {
     <div className="card border-primary mb-3">
       <div className="card-header">Message Box</div>
       <div className="card-body text-dark">
-        <div className="card text-white bg-primary mb-3">test</div>
-        <div className="card text-white bg-primary mb-3">test</div>
-        <div className="card text-white bg-primary mb-3">test</div>
-        <div className="card text-white bg-success mb-3">test</div>
         {messages}
         <form>
           <div className="form-group">

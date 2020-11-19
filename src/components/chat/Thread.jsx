@@ -5,9 +5,10 @@ function Thread({ thread }) {
   const senderMail = window.sessionStorage.getItem('userEmail');
   const receiverEmail = senderMail === thread.p1Email ? thread.p2Email : thread.p1Email;
 
+  // Massive Blue Boxes
   return (
-    <div class="card">
-      <div class="card-body">
+    <div class="card bg-primary">
+      <div class="card-body ">
         <h5 class="card-title">Chatting with {receiverEmail}</h5>
         <Link
           to={{ pathname: `/chat/${thread.id}`, state: { thread } }}
