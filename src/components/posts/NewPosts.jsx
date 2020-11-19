@@ -23,9 +23,7 @@ function NewPosts() {
   }, [history, post]);
 
   return (
-    <div>
       <NewPostForm setPost={setPost} />
-    </div>
   );
 }
 
