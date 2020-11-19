@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import ChatApi from '../../api/ChatApi';
-import ChatPage from './ChatPage';
 
 function ThreadPage() {
   useEffect(() => {
