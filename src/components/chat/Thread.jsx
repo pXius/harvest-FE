@@ -9,6 +9,8 @@ function Thread({ thread, setMessageBox }) {
   const clickHandler = () => {
     setMessageBox({ threadId: thread.id, thread: thread });
   };
+  const lastMessage = thread.thread.slice(-1)[0];
+  const lastDate = lastMessage === undefined ? null : lastMessage.date;
 
   // Massive Blue Boxes
   return (
@@ -22,7 +24,7 @@ function Thread({ thread, setMessageBox }) {
           <Link to="/chat" onClick={clickHandler}>
             {receiverEmail}
           </Link>
-          <span className="chat_date">Dec 25</span>
+          <span className="chat_date">{lastDate}</span>
         </h5>
         <p>{receiverMessage}</p>
       </div>

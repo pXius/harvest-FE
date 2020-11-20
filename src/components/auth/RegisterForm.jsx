@@ -54,7 +54,7 @@ function RegisterForm({ onSubmit }) {
 
     <div className="sign-up-form">
       <div className="group">
-        <label for="user" className="label">
+        <label htmlFor="user" className="label">
           Username
         </label>
         <input
@@ -67,11 +67,11 @@ function RegisterForm({ onSubmit }) {
         />
       </div>
       <div className="group">
-        <label for="email" className="label">
+        <label htmlFor="email" className="label">
           Email Address
         </label>
         <input
-          id="email"
+          id="email2"
           type="text"
           className="input"
           value={email}
@@ -80,11 +80,11 @@ function RegisterForm({ onSubmit }) {
         />
       </div>
       <div className="group">
-        <label for="pass" className="label">
+        <label htmlFor="pass" className="label">
           Password
         </label>
         <input
-          id="pass"
+          id="pass1"
           type="password"
           className="input"
           value={password}
@@ -104,7 +104,7 @@ function RegisterForm({ onSubmit }) {
       <div className="hr"></div>
       <div className="foot">
         {' '}
-        <label for="tab-1">Already Member?</label>{' '}
+        <label htmlFor="tab-1">Already Member?</label>{' '}
       </div>
     </div>
   );

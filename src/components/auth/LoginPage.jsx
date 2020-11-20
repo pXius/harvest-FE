@@ -42,7 +42,7 @@ function LoginPage() {
                 Login
               </label>
               <input id="tab-2" type="radio" name="tab" className="sign-up" />
-              <label for="tab-2" className="tab">
+              <label htmlFor="tab-2" className="tab">
                 Sign Up
               </label>
               <div className="login-space">

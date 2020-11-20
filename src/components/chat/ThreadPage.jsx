@@ -9,7 +9,6 @@ function ThreadPage() {
   const { id } = useParams();
   const { state } = useLocation();
   const locationState = state === null || state === undefined ? '' : state.thread;
-  const paramsId = id === null || id === undefined ? '' : id;
   const [messageBox, setMessageBox] = useState({ threadId: id, thread: locationState });
 
   useEffect(() => {

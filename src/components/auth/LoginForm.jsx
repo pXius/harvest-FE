@@ -46,7 +46,7 @@ function LoginForm({ onSubmit }) {
           Email
         </label>
         <input
-          id="email"
+          id="email1"
           type="text"
           value={email}
           className="input"
@@ -59,7 +59,7 @@ function LoginForm({ onSubmit }) {
           Password
         </label>
         <input
-          id="pass"
+          id="pass2"
           type="password"
           value={password}
           className="input"
