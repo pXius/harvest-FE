@@ -117,10 +117,32 @@
         font-size: 14px;
         border-radius: 4px;
         transition: all .3s;
+        margin-top: 2%;
     }
-    .singlePost-btn:hover, .like:hover {
-        border:1px solid transparent;
-        background:#16a085;color:#fff }
+  .singlePost-btn:hover, .like:hover {
+    border:1px solid transparent;
+    background:#16a085;color:#fff 
+  }
+
+  .comment-btn, .like {
+      background-color: #B52B65;
+      border: 1px solid #e5e5e5;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 4px;
+      transition: all .3s;
+    }
+    .comment-btn:hover, .like:hover {
+      border:1px solid transparent;
+      background:#16a085;color:#fff 
+    }      
+
+    .comment-text{
+      margin-bottom: 1%;
+    }
   
   .not-available {
     text-align: center;

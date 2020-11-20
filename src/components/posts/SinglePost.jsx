@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import ErrorScreen from '../tempscreens/ErrorScreen';
 import PostsApi from '../../api/PostsApi';
 import ChatApi from '../../api/ChatApi';
+import CommentsPage from '../comments/CommentsPage';
 
 function SinglePost() {
   const userEmail = window.sessionStorage.getItem('userEmail');
@@ -61,6 +62,9 @@ function SinglePost() {
                 <span className="review-no">41 reviews</span>
               </div>
               <p className="product-description">{post.body}</p>
+
+              <CommentsPage />
+
               <div className="action">
                 {isPoster ? (
                   <button
@@ -87,6 +91,7 @@ function SinglePost() {
             </div>
           </div>
         </div>
+        
       </div>
     );
   } catch (e) {

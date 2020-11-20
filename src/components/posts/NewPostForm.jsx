@@ -60,7 +60,7 @@ function NewPostForm({ setPost }) {
           <button
             disabled={uploading ? true : false}
             type="submit"
-            className="btn btn-outline-info my-2 my-sm-0">
+            className="btn-newPost">
             {uploading ? '- - - - -' : 'Submit'}
           </button>
         </div>
