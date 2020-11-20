@@ -6,7 +6,7 @@ class CommentApi {
     }
 
     getCommentById(id) {
-        return Api.get('/comment/'+id);
+        return Api.get('/comment'+id);
     }
 
     createComment(comment) {
@@ -18,7 +18,7 @@ class CommentApi {
     }
 
     deleteComment(id) {
-        return Api.delete('/comment/'+id);
+        return Api.delete('/comment'+id);
     } 
 }
 

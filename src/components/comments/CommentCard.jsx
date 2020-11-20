@@ -9,18 +9,17 @@ function CommentCard({comment, onDeleteClick, onUpdateClick}) {
     };
 
     return isUpdating ?
-    <CommentUpdateForm oldComment ={comment} onUpdateClick = {(updatedComment) => { setIsUpdating(false); onUpdateClick(updatedComment); }} />
-    :
+    <CommentUpdateForm oldComment={comment} onUpdateClick={updateComment=> {setIsUpdating(false);onUpdateClick={updateComment};}}/> : 
     <div>
         <h5>{comment.authorName}</h5>
         <h4>{comment.body}</h4>
 
          <div>
-                    <button  onClick={() => onDeleteClick(comment)}>
+                    <button  className = "btn btn-info" onClick={() => onDeleteClick(comment.id)}>
                         Delete
                 </button>
 
-                    <button  onClick={handleUpdateClick}>
+                    <button  className = "btn btn-info" onClick={handleUpdateClick}>
                         Update
                     </button>
                 </div>

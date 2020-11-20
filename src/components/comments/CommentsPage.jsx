@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import NewCommentForm from "./NewCommentForm";
 import CommentCard from "./CommentCard";
 import Api from "../../api/Api";
+import CommentApi from "..//../api/CommentApi";
 
 function CommentsPage() {
     const [comments, setComments] = useState([]);
@@ -16,14 +17,14 @@ function CommentsPage() {
         .then(response => setComments(response.data));
     }
 
-    const deleteComment = (comment) => {
-        Api.delete("/comments" + comment.id)
-            .then(response => getAll());
+    const deleteComment = (id) => {
+        Api.delete("/comments/" + id)
+       .then(response => getAll());
     }
 
     const updateComment = (updatedComment) => {
-        Api.get("/comments", updatedComment)
-            .then(r => getAll());
+       CommentApi.updateComment("/comments", updatedComment)
+         .then(r => getAll());
     }
 
     useEffect(()=>{
@@ -33,13 +34,17 @@ function CommentsPage() {
     
     return (
         <div>
+        
+        <div>
             <NewCommentForm onSubmit ={createComment}/>
             {
                 comments.map(comment => (<CommentCard
                     comment={comment}
-                    onUpdateClick={updateComment}
+                    key={comment.id}
+                   onUpdateCick={updateComment}
                     onDeleteClick={deleteComment} />))
             }
+        </div>
         </div>
     )
 

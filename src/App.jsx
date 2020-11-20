@@ -15,8 +15,8 @@ import PostsPage from './components/posts/PostsPage';
 // import ChatPage from './components/chat/ChatPage';
 import NewPosts from './components/posts/NewPosts';
 import SinglePost from './components/posts/SinglePost';
-import ThreadPage from './components/chat/ThreadPage';
-import ChatPage from './components/chat/ChatPage';
+import ThreadPagedefunct from './components/chat/ThreadPagedefunct';
+import ChatPagedefunt from './components/chat/ChatPagedefunt';
 import CommentsPage from './components/comments/CommentsPage';
 
 function App() {
@@ -49,11 +49,11 @@ function App() {
             </Route>
 
             <Route path="/chat" exact>
-              <ThreadPage />
+              <ThreadPagedefunct />
             </Route>
 
             <Route path="/chat/:id">
-              <ChatPage />
+              <ChatPagedefunt />
             </Route>
 
             <Route path="/">
