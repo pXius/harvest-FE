@@ -26,7 +26,7 @@ function App() {
       <Navbar onLogout={() => Auth.logout()} />
 
       <div className="container mt-5">
-        <div className="row" />
+        
         <Switch>
           <Route path="/posts" exact>
             <PostsPage />
@@ -56,6 +56,7 @@ function App() {
             <HomePage />
           </Route>
         </Switch>
+      
       </div>
     </Router>
   );

@@ -200,8 +200,21 @@
   opacity: 0.6 !important;
 }
 
-.posts-grid {
-  display: flex;
+.btn-newPost{
+  background-color: #b52b65;
+  border: 1px solid #e5e5e5;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.btn-newPost:hover{
+  border: 1px solid transparent;
+  background: #16a085;
+  color: #fff;
 }
 
 @media only screen and (max-width: 990px) {

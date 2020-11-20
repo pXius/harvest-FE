@@ -11,9 +11,9 @@ export default function NewCommentForm({onSubmit}){
         <div>
             <label>Comment</label>
             <textarea
-className = "form-control"
+            className = "form-control comment-text"
 
-            placeholder="type here"
+            placeholder="type your comment here.."
             value= {body}
             onChange = {event => setBody(event.target.value)}/>
 
@@ -23,7 +23,7 @@ className = "form-control"
             value= {authorName}
        onChange = {event => setAuthorName(event.target.value)}/>*/}
 
-            <button className="btn btn-outline-info my-2 my-sm-0" onClick= {()=> onSubmit({body, authorName})}>
+            <button className="comment-btn" onClick= {()=> onSubmit({body, authorName})}>
                 Comment
     </button>
         </div> 

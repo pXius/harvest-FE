@@ -30,7 +30,7 @@ function CommentsPage() {
   }, []);
 
   return (
-    <div className="card">
+    <div className="comment-card">
       <NewCommentForm onSubmit={createComment} />
       {comments.map(comment => (
         <CommentCard

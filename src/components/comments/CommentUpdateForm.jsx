@@ -9,10 +9,11 @@ function CommentUpdateForm({ oldComment, onUpdateClick }) {
         <div>
             
             <textarea
-            placeholder="type here"
+            className="form-control comment-text"
+            placeholder="type your comment here.."
             value= {body}
             onChange = {event => setBody(event.target.value)}/>
-            <button className = "btn btn-info" onClick= {()=> onUpdateClick({...oldComment,body})}>
+            <button className = "comment-btn" onClick= {()=> onUpdateClick({...oldComment,body})}>
                 Save
     </button>
         </div> 
