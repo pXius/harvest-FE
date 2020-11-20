@@ -47,15 +47,7 @@ function Navbar({ onLogout }) {
               Chat
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              exact
-              to="/comments"
-              className="nav-link"
-              activeClassName="active-link">
-              Comments
-            </NavLink>
-          </li>
+          
           <li className="nav-item">
             <button className="btn btn-outline-info my-2 my-sm-0" onClick={onLogout}>
               Logout

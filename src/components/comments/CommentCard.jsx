@@ -15,11 +15,11 @@ function CommentCard({comment, onDeleteClick, onUpdateClick}) {
         <h4>{comment.body}</h4>
 
          <div>
-                    <button  className = "btn btn-info" onClick={() => onDeleteClick(comment.id)}>
+                    <button  className = "comment-btn" onClick={() => onDeleteClick(comment.id)}>
                         Delete
                 </button>
 
-                    <button  className = "btn btn-info" onClick={handleUpdateClick}>
+                    <button  className = "comment-btn" onClick={handleUpdateClick}>
                         Update
                     </button>
                 </div>
