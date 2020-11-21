@@ -11,7 +11,7 @@ function NewPosts() {
     const createPost = async () => {
       try {
         if (post !== null) {
-          const response = await PostsApi.createPost(post);
+          const response = await PostsApi.createPost(post); // We need to check response success before redirecting.
           history.push('/posts');
         }
       } catch (error) {

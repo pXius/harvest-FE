@@ -19,19 +19,6 @@ function LoginPage() {
   };
 
   return (
-    /* <div className="login-container">
-        <div className="loginNSignup">
-                        <h5>ACCOUNT LOGIN</h5>
-                        <div className="loginForm">
-                                <LoginForm onSubmit={login} />
-                                <p> Don't have an account?</p>
-                            <div >
-                                <RegisterForm onSubmit={register} />
-    </div>
-                        </div>
-                    </div>
-                    </div> */
-
     <div className="row">
       <div className="login-container">
         <div className="card">

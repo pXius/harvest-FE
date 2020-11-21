@@ -22,11 +22,6 @@ function ChatPage({ id, thread }) {
     }
   };
 
-  const handleClick = e => {
-    e.preventDefault();
-    sendMessage();
-  };
-
   useEffect(() => {
     const poll = setInterval(() => {
       const updateThread = async () => {
@@ -37,6 +32,11 @@ function ChatPage({ id, thread }) {
     }, 1000);
     return () => clearInterval(poll);
   }, [id]);
+
+  const handleClick = e => {
+    e.preventDefault();
+    sendMessage();
+  };
 
   const messages =
     messageArray === null

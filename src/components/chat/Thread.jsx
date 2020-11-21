@@ -12,7 +12,6 @@ function Thread({ thread, setMessageBox }) {
   const lastMessage = thread.thread.slice(-1)[0];
   const lastDate = lastMessage === undefined ? null : lastMessage.date;
 
-  // Massive Blue Boxes
   return (
     <div className="chat_people">
       <div className="chat_img">

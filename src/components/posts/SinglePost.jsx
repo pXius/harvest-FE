@@ -91,7 +91,6 @@ function SinglePost() {
             </div>
           </div>
         </div>
-        
       </div>
     );
   } catch (e) {

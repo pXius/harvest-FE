@@ -33,8 +33,6 @@ function HomePage() {
         </div>
 
         <div className="col-md-9">
-          {/* <img src={home} alt="home"style={{height:"auto" , width:"100%"}} /> */}
-
           <div
             id="carouselExampleInterval"
             className="carousel slide"
