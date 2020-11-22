@@ -25,7 +25,7 @@ function ImageUploader({ setImgUrl, setUploading }) {
       try {
         if (payload !== null) {
           const response = await fetch(
-            'https://api.cloudinary.com/v1_1/dcbkjgr7c/image/upload',
+            'https://api.cloudinary.com/v1_1/dcbkjgr7c/image/upload', //We should probably put this in .env for now.
             {
               method: 'post',
               body: payload,
